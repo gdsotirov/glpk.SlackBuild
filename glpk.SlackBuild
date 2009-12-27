@@ -7,7 +7,7 @@
 . ../slack-package.conf
 
 NAME=glpk
-VERSION=4.39
+VERSION=4.41
 BUILD=1
 ARCH=${ARCH:-i486}
 
