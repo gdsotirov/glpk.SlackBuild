@@ -2,13 +2,14 @@
 #
 # SlackBuild for GLPK
 # Written by Georgi D. Sotirov <gdsotirov@dir.bg>
+# Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
 
 . ../slack-package.conf
 
 NAME=glpk
-VERSION=4.41
-BUILD=1
+VERSION=4.44
+BUILD=${BUILD:-1}
 ARCH=${ARCH:-i486}
 
 TMP=${TMP:-/tmp}
@@ -33,8 +34,7 @@ mkdir -p $PKG
 
 # Extract the source
 cd $TMP
-tar -zxvf $CWD/$NAME-$VERSION.tar.gz || exit 1
-SRC=$TMP/$NAME-$VERSION
+tar -xvf $CWD/$NAME-$VERSION.tar.gz || exit 1
 cd $SRC
 fix_source
 
@@ -70,10 +70,11 @@ mkdir -p $PKG/install
 install -m 644 $CWD/slack-desc     $PKG/install/slack-desc
 install -m 644 $CWD/slack-required $PKG/install/slack-required
 
-mkdir -p $PKG/usr/src/slackbuilds/$NAME-$VERSION
-install -m 644 $CWD/slack-desc       $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-desc
-install -m 644 $CWD/slack-required   $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-required
-install -m 644 $CWD/$NAME.SlackBuild $PKG/usr/src/slackbuilds/$NAME-$VERSION/$NAME.SlackBuild
+SBDIR=$PKG/usr/src/slackbuilds/$NAME-$VERSION
+mkdir -p $SBDIR
+install -m 644 $CWD/slack-desc       $SBDIR/slack-desc
+install -m 644 $CWD/slack-required   $SBDIR/slack-required
+install -m 644 $CWD/$NAME.SlackBuild $SBDIR/$NAME.SlackBuild
 
 # Pack
 cd $PKG
