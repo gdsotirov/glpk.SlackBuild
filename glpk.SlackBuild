@@ -1,14 +1,31 @@
 #!/bin/sh
 #
-# SlackBuild for GLPK
-# Written by Georgi D. Sotirov <gdsotirov@dir.bg>
+# # Slackware build script for GLPK
+# Copyright (C) 2009-2011 Georgi D. Sotirov <gdsotirov@dir.bg>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
+#
+# $Id: glpk.SlackBuild,v 1.5 2011/08/21 05:43:49 gsotirov Exp $
 #
 
 . ../slack-package.conf
 
 NAME=glpk
-VERSION=4.45
+VERSION=4.46
 BUILD=${BUILD:-1}
 ARCH=${ARCH:-i486}
 
@@ -49,8 +66,7 @@ CXXFLAGS=$SLKCFLAGS \
             --infodir=/usr/info \
             --enable-shared=yes \
             --enable-static=no \
-            --with-gmp \
-            --with-zlib || exit 2
+            --with-gmp || exit 2
 
 # Build
 make -j4 all || exit 3 
