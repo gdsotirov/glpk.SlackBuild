@@ -19,15 +19,15 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: glpk.SlackBuild,v 1.17 2016/04/17 17:00:09 gsotirov Exp $
+# $Id: glpk.SlackBuild,v 1.18 2016/11/06 08:25:43 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=glpk
 VERSION=4.60
+ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
-ARCH=${ARCH:-i486}
 
 TMP=${TMP:-/tmp}
 CWD=${CWD:-`pwd`}
