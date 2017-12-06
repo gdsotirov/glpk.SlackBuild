@@ -19,13 +19,13 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: glpk.SlackBuild,v 1.21 2017/07/27 16:15:59 gsotirov Exp $
+# $Id: glpk.SlackBuild,v 1.22 2017/12/06 18:56:16 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=glpk
-VERSION=4.63
+VERSION=4.64
 ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
 
