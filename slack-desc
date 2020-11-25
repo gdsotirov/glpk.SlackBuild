@@ -8,4 +8,4 @@ glpk: GLPK supports the GNU MathProg modeling language, which is
 glpk: a subset of the AMPL language.  
 glpk:
 glpk:
-glpk: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
+glpk: Packaged by Georgi D. Sotirov <gdsotirov@gmail.com>
