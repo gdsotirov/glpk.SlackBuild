@@ -23,7 +23,7 @@
 . ../../slack-package.conf
 
 NAME=glpk
-VERSION=4.65
+VERSION=5.0
 ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
 
@@ -56,8 +56,8 @@ fix_source
 # Configure
 CFLAGS=$SLKCFLAGS \
 CXXFLAGS=$SLKCFLAGS \
-./configure --build=$ARCH-slackware-linux \
-            --host=$ARCH-slackware-linux \
+./configure --build="$ARCH-slackware-linux" \
+            --host="$ARCH-slackware-linux" \
             --prefix=/usr \
             --sysconfdir=/etc \
             --libdir=/usr/lib${LIBDIRSUFFIX} \
@@ -68,7 +68,7 @@ CXXFLAGS=$SLKCFLAGS \
             --with-gmp || exit 4
 
 # Build & install
-make --jobs 4 all || exit 5 
+make --jobs all || exit 5
 make DESTDIR=$PKG install || exit 6
 
 # Prepare
@@ -76,8 +76,6 @@ bin_perms $PKG
 ( cd $PKG; strip_bin; strip_lib )
 ( cd $SRC; create_docs $PKG $NAME-$VERSION )
 rm -rf $PKG/usr/doc/$NAME-$VERSION/doc
-#gzip_man $PKG
-#gzip_info $PKG
 
 install --mode 755 --directory $PKG/install
 install --mode 644 --preserve-timestamp \
