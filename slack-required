@@ -1,3 +1,2 @@
-glibc-solibs >= 2.23
-gmp >= 6.1
-zlib >= 1.2.8
+aaa_glibc-solibs >= 2.33
+gmp >= 6.2.1
